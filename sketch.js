@@ -1,4 +1,4 @@
-const PARTICLES_AMOUNT = 1024;
+const PARTICLES_AMOUNT = 100;
 const STEP = 10;
 const NOISE_STEP = 75;
 
@@ -28,23 +28,17 @@ function draw() {
 
     for (let p of particles) {
         p.update();
-        p.draw(color(255, 255 * random(), 0, 255 * (p.pos.y - height + noiseHeight * 2) / height));
+        p.draw(color(255, 200 * (height * 1.3 - p.pos.y) / height, 0, 255 * p.pos.y / height));
     }
     nextParticle = getNextParticle();
-    while (nextParticle && currentX < width) {
-        let cleanNoise = noise(currentX / NOISE_STEP, batch)
-        let currentNoise = cleanNoise * noiseHeight;
-
-        if (noise((currentX - 1) / NOISE_STEP, batch) < cleanNoise
-            && noise((currentX + 1) / NOISE_STEP, batch) < cleanNoise) {
-                let newY = height - currentNoise;
-                nextParticle.reinit(createVector(currentX, newY));
-        }
-
-        currentX = ++currentX % width;
+    while (mouseIsPressed && nextParticle && mouseX > 0 && mouseX < width) {
+        nextParticle.reinit(createVector(mouseX, mouseY));
         nextParticle = getNextParticle();
     }
 
+    for (let x = 0; x < width; x += STEP) {
+
+    }
 
     batch += 0.1;
 }
