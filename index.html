@@ -1,17 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="p5.js"></script>
-        <script src="p5.sound.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <script src="particle.js"></script>
-        <meta charset="utf-8" />
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    </head>
-    <body>
-        <main>
-        </main>
-        <script src="sketch.js"></script>
-    </body>
+    <!-- PLEASE NO CHANGES BELOW THIS LINE (UNTIL I SAY SO) -->
+    <script language="javascript" type="text/javascript" src="libraries/p5.min.js"></script>
+    <script language="javascript" type="text/javascript" src="frp.js"></script>
+    <!-- OK, YOU CAN MAKE CHANGES BELOW THIS LINE AGAIN -->
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+
+            background-color: black;
+        }
+
+        main {
+            width: 100vw;
+            heighT: 100vh;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        main::after {
+            content: "Relax.";
+
+            color: whitesmoke;
+            margin-top: 32px;
+        }
+    </style>
+</head>
+
+<body>
+</body>
 </html>
